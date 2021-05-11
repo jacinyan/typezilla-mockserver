@@ -1,8 +1,19 @@
-class CRUD {
+import { required, search, insertBefore, insertAfter } from '../utils'
+
+class Breads {
   storageKey = ''
   list = []
 
-  get listItems() {
+  constructor(storageKey) {
+    this.storageKey = storageKey
+    try {
+      this.load()
+    } catch (error) {
+      this.persist()
+    }
+  }
+
+  get mappedList() {
     return this.list.reduce((prev, next) => {
       return { ...prev, [next.id]: next }
     }, {})
@@ -16,7 +27,7 @@ class CRUD {
 
   validateItem = (id) => {
     this.load()
-    if (!this.listItems[id]) {
+    if (!this.mappedList[id]) {
       const error = new ServerError(`No item with the id "${id}"`)
       error.status = 404
       throw error
@@ -28,18 +39,30 @@ class CRUD {
    * @param type 'after'|'before'
    * @param toId
    */
+  reorder({ fromId, type, referenceId }) {
+    const movingItemIndex = this.list.findIndex((item) => item.id === fromId)
+    if (!referenceId) {
+      insertAfter(this.list, movingItemIndex, this.list.length - 1)
+      this.persist()
+      return
+    }
+    const targetIndex = this.list.findIndex((item) => item.id === referenceId)
+    const insert = type === 'after' ? insertAfter : insertBefore
+    insert(this.list, movingItemIndex, targetIndex)
+    this.persist()
+  }
 
   push(items) {
     items.forEach((item) => this.create(item))
     this.persist()
   }
 
-  detail = (id) => {
+  detail(id) {
     this.validateItem(id)
-    return this.listItems[id]
+    return this.mappedList[id]
   }
 
-  remove = (id) => {
+  remove(id) {
     this.validateItem(id)
     this.list = this.list.filter((item) => item.id !== id)
     this.persist()
@@ -55,8 +78,8 @@ class CRUD {
     return this.detail(id)
   }
 
-  create({ name = 'name', ...rest }) {
-    const ids = Object.keys(this.listItems).map(Number)
+  create({ name = required('name'), ...rest }) {
+    const ids = Object.keys(this.listMap).map(Number)
     const id = Math.max(...ids, 0) + 1
     const newItem = { ...rest, name, id }
     this.list.push(newItem)
@@ -73,21 +96,12 @@ class CRUD {
       'ownerId' in item ? item['ownerId'] === userId : true
     )
   }
-
-  constructor(storageKey) {
-    this.storageKey = storageKey
-    try {
-      this.load()
-    } catch (error) {
-      this.persist()
-    }
-  }
 }
 
-export const projectDB = new CRUD('__typezilla__project')
-export const epicDB = new CRUD('__typezilla__epic')
-export const taskDB = new CRUD('__typezilla__task')
-export const kanbanDB = new CRUD('__typezilla__kanban')
-export const userDB = new CRUD('__typezilla__user')
-export const taskTypeDB = new CRUD('__typezilla__task__type')
-export const tagDB = new CRUD('__typezilla__tag__')
+export const projectDB = new Breads('__typezilla__project')
+export const epicDB = new Breads('__typezilla__epic')
+export const taskDB = new Breads('__typezilla__task')
+export const kanbanDB = new Breads('__typezilla__kanban')
+export const userDB = new Breads('__typezilla__user')
+export const taskTypeDB = new Breads('__typezilla__task__type')
+export const tagDB = new Breads('__typezilla__tag__')
