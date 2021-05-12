@@ -1,3 +1,11 @@
+export class ServerError extends Error {
+  status = 200
+
+  constructor(message) {
+    super(message)
+  }
+}
+
 export function required(key) {
   const error = new ServerError(`${key} is required`)
   error.status = 400

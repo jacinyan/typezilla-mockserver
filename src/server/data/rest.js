@@ -79,7 +79,7 @@ class Breads {
   }
 
   create({ name = required('name'), ...rest }) {
-    const ids = Object.keys(this.listMap).map(Number)
+    const ids = Object.keys(this.mappedList).map(Number)
     const id = Math.max(...ids, 0) + 1
     const newItem = { ...rest, name, id }
     this.list.push(newItem)
