@@ -1,3 +1,11 @@
+import {
+  sanitizeUser,
+  validateUser,
+  validateUserForm,
+  hash,
+  ServerError
+} from '../utils'
+
 const usersKey = '__typezilla_users__'
 
 let users = {}
@@ -13,34 +21,6 @@ try {
   persist()
 }
 
-const validateUserForm = ({ name, password }) => {
-  if (!name) {
-    const error = new ServerError('A name is required')
-    error.status = 400
-    throw error
-  }
-  if (!password) {
-    const error = new ServerError('A password is required')
-    error.status = 400
-    throw error
-  }
-}
-
-function hash(str) {
-  let hash = 5381,
-    i = str.length
-
-  while (i) {
-    hash = (hash * 33) ^ str.charCodeAt(--i)
-  }
-  return String(hash >>> 0)
-}
-
-function sanitizeUser(user) {
-  const { passwordHash, ...rest } = user
-  return rest
-}
-
 const authenticate = ({ name, password }) => {
   validateUserForm({ name, password })
   const id = +hash(name)
@@ -51,15 +31,6 @@ const authenticate = ({ name, password }) => {
   const error = new ServerError('Invalid name or password')
   error.status = 400
   throw error
-}
-
-function validateUser(id) {
-  load()
-  if (!users[id]) {
-    const error = new ServerError(`No user with the id "${id}"`)
-    error.status = 404
-    throw error
-  }
 }
 
 async function read(id) {

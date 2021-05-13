@@ -1,6 +1,6 @@
 import { rest } from 'msw'
-import * as accountDB from '../data/account'
-import { bootstrap } from '../bootstrap'
+import * as accountDB from '../models/account'
+import { bootstrap } from '../models/index'
 import { ServerError } from '../utils'
 
 const apiUrl = process.env.REACT_APP_API_URL
@@ -15,6 +15,7 @@ export async function getUser(req) {
     error.status = 401
     throw error
   }
+
   let userId
   try {
     userId = atob(token)

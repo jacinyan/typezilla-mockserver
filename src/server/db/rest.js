@@ -1,6 +1,6 @@
 import { required, search, insertBefore, insertAfter } from '../utils'
 
-class Breads {
+class Rest {
   storageKey = ''
   list = []
 
@@ -13,7 +13,7 @@ class Breads {
     }
   }
 
-  get mappedList() {
+  get mapListArrToObj() {
     return this.list.reduce((prev, next) => {
       return { ...prev, [next.id]: next }
     }, {})
@@ -27,7 +27,7 @@ class Breads {
 
   validateItem = (id) => {
     this.load()
-    if (!this.mappedList[id]) {
+    if (!this.mapListArrToObj[id]) {
       const error = new ServerError(`No item with the id "${id}"`)
       error.status = 404
       throw error
@@ -59,7 +59,7 @@ class Breads {
 
   detail(id) {
     this.validateItem(id)
-    return this.mappedList[id]
+    return this.mapListArrToObj[id]
   }
 
   remove(id) {
@@ -79,7 +79,7 @@ class Breads {
   }
 
   create({ name = required('name'), ...rest }) {
-    const ids = Object.keys(this.mappedList).map(Number)
+    const ids = Object.keys(this.mapListArrToObj).map(Number)
     const id = Math.max(...ids, 0) + 1
     const newItem = { ...rest, name, id }
     this.list.push(newItem)
@@ -98,10 +98,10 @@ class Breads {
   }
 }
 
-export const projectDB = new Breads('__typezilla__project')
-export const epicDB = new Breads('__typezilla__epic')
-export const taskDB = new Breads('__typezilla__task')
-export const kanbanDB = new Breads('__typezilla__kanban')
-export const userDB = new Breads('__typezilla__user')
-export const taskTypeDB = new Breads('__typezilla__task__type')
-export const tagDB = new Breads('__typezilla__tag__')
+export const projectDB = new Rest('__typezilla__project')
+export const epicDB = new Rest('__typezilla__epic')
+export const taskDB = new Rest('__typezilla__task')
+export const kanbanDB = new Rest('__typezilla__kanban')
+export const userDB = new Rest('__typezilla__user')
+export const taskTypeDB = new Rest('__typezilla__task__type')
+export const tagDB = new Rest('__typezilla__tag__')

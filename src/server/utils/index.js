@@ -1,3 +1,4 @@
+//error handler
 export class ServerError extends Error {
   status = 200
 
@@ -6,6 +7,45 @@ export class ServerError extends Error {
   }
 }
 
+//auth
+export const validateUserForm = ({ name, password }) => {
+  if (!name) {
+    const error = new ServerError('A name is required')
+    error.status = 400
+    throw error
+  }
+  if (!password) {
+    const error = new ServerError('A password is required')
+    error.status = 400
+    throw error
+  }
+}
+
+export function hash(str) {
+  let hash = 5381,
+    i = str.length
+
+  while (i) {
+    hash = (hash * 33) ^ str.charCodeAt(--i)
+  }
+  return String(hash >>> 0)
+}
+
+export function sanitizeUser(user) {
+  const { passwordHash, ...rest } = user
+  return rest
+}
+
+export function validateUser(id) {
+  load()
+  if (!users[id]) {
+    const error = new ServerError(`No user with the id "${id}"`)
+    error.status = 404
+    throw error
+  }
+}
+
+//db
 export function required(key) {
   const error = new ServerError(`${key} is required`)
   error.status = 400
