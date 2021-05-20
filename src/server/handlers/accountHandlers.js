@@ -1,6 +1,6 @@
 import { rest } from 'msw'
 import * as accountDB from '../models/account'
-import { bootstrap } from '../models/index'
+import { bootstrap } from '../helpers/index'
 import { ServerError } from '../utils'
 
 const apiUrl = process.env.REACT_APP_API_URL

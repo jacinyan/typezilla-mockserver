@@ -21,19 +21,19 @@ export const tags = [
 
 export const epics = [
   {
-    name: '骑手物料表单开发',
+    name: 'Drivers Equipment Development',
     start: new Date('2021-1-10').getTime(),
     end: new Date('2021-02-11').getTime()
   },
   {
-    name: '骑手地图开发',
+    name: 'Maps & Navigation Development',
     start: new Date('2021-02-12').getTime(),
     end: new Date('2021-03-14').getTime()
   },
   {
-    name: '骑手地图开发',
-    start: new Date('2021-02-12').getTime(),
-    end: new Date('2021-03-14').getTime()
+    name: 'Purchase Order Development',
+    start: new Date('2021-03-08').getTime(),
+    end: new Date('2021-04-09').getTime()
   }
 ]
 
@@ -51,60 +51,60 @@ export const kanbans = [
 
 export const users = [
   {
-    name: '高修文',
-    organization: '外卖组'
+    name: 'Hewitt McGowan',
+    organization: 'Delivery'
   },
   {
-    name: '熊天成',
-    organization: '外卖组'
+    name: 'Ed Grylls ',
+    organization: 'Delivery'
   },
   {
-    name: '郑华',
-    organization: '总部组'
+    name: 'Mandy Cheung',
+    organization: 'Headquarters'
   },
   {
-    name: '王文静',
-    organization: '中台组'
+    name: 'Jane Wang',
+    organization: 'Service Gateway'
   }
 ]
 
 export const projects = [
   {
-    name: '骑手管理',
+    name: 'Drivers Management System',
     personId: 1,
-    organization: '外卖组',
+    organization: 'Delivery',
     created: 1604989757139
   },
   {
-    name: '团购 APP',
+    name: 'Group-buying System',
     personId: 2,
-    organization: '团购组',
+    organization: 'Group Buying',
     created: 1604989757139,
     pin: true
   },
   {
-    name: '物料管理系统',
+    name: 'Equipment Management System',
     personId: 2,
-    organization: '物料组',
+    organization: 'Equipment',
     created: 1546300800000
   },
   {
-    name: '总部管理系统',
+    name: 'Headquarters Management',
     personId: 3,
-    organization: '总部',
+    organization: 'Headquarters',
     created: 1604980000011
   },
   {
-    name: '送餐路线规划系统',
+    name: 'Route Planning System',
     personId: 4,
-    organization: '外卖组',
+    organization: 'Delivery',
     created: 1546900800000
   }
 ]
 
 export const tasks = [
   {
-    name: '骑手管理注册界面开发',
+    name: 'Drivers Registration Development',
     tags: [1, 2],
     reporterId: 1,
     processorId: 2,
@@ -112,10 +112,10 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: '请尽快完成'
+    note: 'Complete the task ASAP'
   },
   {
-    name: '骑手管理登录界面开发',
+    name: 'Drivers Authentication Development',
     tags: [2],
     reporterId: 1,
     processorId: 2,
@@ -123,10 +123,10 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: '请使用JWT完成'
+    note: 'With JWT'
   },
   {
-    name: '单元测试',
+    name: 'Unit Tests',
     tags: [1],
     reporterId: 1,
     processorId: 2,
@@ -137,7 +137,7 @@ export const tasks = [
     note: ''
   },
   {
-    name: '性能优化',
+    name: 'Optimisation',
     tags: [1],
     reporterId: 1,
     processorId: 2,
@@ -148,7 +148,7 @@ export const tasks = [
     note: ''
   },
   {
-    name: '权限管理界面开发',
+    name: 'Authorisation',
     tags: [1],
     reporterId: 1,
     processorId: 2,
@@ -159,7 +159,7 @@ export const tasks = [
     note: ''
   },
   {
-    name: 'UI开发',
+    name: 'UI Development',
     tags: [1],
     reporterId: 1,
     processorId: 2,
@@ -170,7 +170,7 @@ export const tasks = [
     note: ''
   },
   {
-    name: '自测',
+    name: 'Self Testing',
     tags: [1],
     reporterId: 1,
     processorId: 2,
