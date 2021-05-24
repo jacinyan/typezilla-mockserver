@@ -1,6 +1,6 @@
 import { rest } from 'msw'
 import { ServerError } from '../utils'
-import { getUser } from './account'
+import { getUser } from './accountHandlers'
 
 const apiUrl = process.env.REACT_APP_API_URL
 

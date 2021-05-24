@@ -1,5 +1,5 @@
 import { rest } from 'msw'
-import * as accountDB from '../models/account'
+import * as accountDB from '../db/account'
 import { bootstrap } from '../helpers/index'
 import { ServerError } from '../utils'
 

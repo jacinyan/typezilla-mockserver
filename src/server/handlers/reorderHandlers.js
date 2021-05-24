@@ -1,5 +1,5 @@
 import { rest } from 'msw'
-import { kanbanDB, taskDB } from '../models/rest'
+import { kanbanDB, taskDB } from '../db/rest'
 
 const apiUrl = process.env.REACT_APP_API_URL
 export const reorderHandlers = [

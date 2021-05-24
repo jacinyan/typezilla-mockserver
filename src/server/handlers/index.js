@@ -1,14 +1,7 @@
-import { userHandlers } from './account'
-import { getRestHandlers } from './rest-handlers'
+import { userHandlers } from './accountHandlers'
+import { getRestHandlers } from './restHandlers'
 import { match } from 'node-match-path'
-import {
-  epicDB,
-  kanbanDB,
-  projectDB,
-  tagDB,
-  taskDB,
-  userDB
-} from '../data/rest'
+import { epicDB, kanbanDB, projectDB, tagDB, taskDB, userDB } from '../db/rest'
 import { reorderHandlers } from './reorderHandlers'
 
 function ls(key, defaultVal) {

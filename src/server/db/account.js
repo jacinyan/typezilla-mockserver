@@ -62,7 +62,7 @@ async function create({ name, password }) {
   const id = +hash(name)
   const passwordHash = hash(password)
   if (users[id]) {
-    const error = new ServerError(`用户名 "${name}" 已存在`)
+    const error = new ServerError(`Username "${name}" exists`)
     error.status = 400
     throw error
   }
