@@ -1,6 +1,6 @@
 {
   "name": "typezilla-mockserver",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "author": "jacinyan",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -16,7 +16,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "antd": "^4.15.5",
+    "antd": "4.9.1",
     "msw": "^0.29.0",
     "node-match-path": "^0.6.3",
     "react": "^17.0.2",
@@ -37,6 +37,9 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",

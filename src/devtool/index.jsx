@@ -10,13 +10,14 @@ import {
 } from '@ant-design/icons'
 import { FailureRate } from './FailureRate'
 import { Reset } from './Reset'
-import { FailRules } from './FailureRules'
+import { FailureRules } from './FailureRules'
 import { ReactQueryDevtoolsPanel } from 'react-query-devtools'
+import 'antd/dist/antd.css'
 
 const { Text, Link } = Typography
 const { TabPane } = Tabs
 
-const DevTool = () => {
+export const DevTool = () => {
   const [visible, setVisible] = useState(false)
   return (
     <div>
@@ -29,7 +30,7 @@ const DevTool = () => {
             zIndex: 9999
           }}
         >
-          <Tooltip title={'Click to toggle the Typezilla console'}>
+          <Tooltip title={'Use the devtool by click the button'}>
             <SettingTwoTone
               style={{ fontSize: '22px' }}
               onClick={() => setVisible(true)}
@@ -56,19 +57,26 @@ const DevTool = () => {
             }
             key='1'
           >
-            <div className={'form-item'}>
+            <div style={{ marginBottom: '0.5rem' }} className={'form-item'}>
               <Reset />
             </div>
             <div
-              className={'form-item item'}
-              style={{ display: 'flex', justifyContent: 'space-between' }}
+              style={{
+                marginBottom: '0.3rem',
+                display: 'flex',
+                justifyContent: 'space-between'
+              }}
             >
-              <label>Min Request Time</label>
+              <label>Minimum request time</label>
               <RequestTime />
             </div>
             <div
-              className={'form-item item'}
-              style={{ display: 'flex', justifyContent: 'space-between' }}
+              className={'form-item'}
+              style={{
+                marginBottom: '0.3rem',
+                display: 'flex',
+                justifyContent: 'space-between'
+              }}
             >
               <label>Failure Rate</label>
               <FailureRate />
@@ -78,12 +86,12 @@ const DevTool = () => {
             tab={
               <span>
                 <StopOutlined />
-                Async Request Failure Settings
+                Async Failure Settings
               </span>
             }
             key='2'
           >
-            <FailRules />
+            <FailureRules />
           </TabPane>
           <TabPane
             tab={
