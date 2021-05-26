@@ -11,7 +11,7 @@ import {
 import { FailureRate } from './FailureRate'
 import { Reset } from './Reset'
 import { FailureRules } from './FailureRules'
-import { ReactQueryDevtoolsPanel } from 'react-query-devtools'
+import { ReactQueryDevtoolsPanel } from 'react-query/devtools'
 import 'antd/dist/antd.css'
 
 const { Text, Link } = Typography

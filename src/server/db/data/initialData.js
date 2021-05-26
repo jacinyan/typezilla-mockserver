@@ -52,52 +52,52 @@ export const kanbans = [
 export const users = [
   {
     name: 'Hewitt McGowan',
-    organization: 'Delivery'
+    team: 'Delivery'
   },
   {
     name: 'Ed Grylls ',
-    organization: 'Delivery'
+    team: 'Delivery'
   },
   {
     name: 'Mandy Cheung',
-    organization: 'Headquarters'
+    team: 'Headquarters'
   },
   {
     name: 'Jane Wang',
-    organization: 'Service Gateway'
+    team: 'Service Gateway'
   }
 ]
 
 export const projects = [
   {
     name: 'Drivers Management System',
-    personId: 1,
-    organization: 'Delivery',
+    teamLeadId: 1,
+    team: 'Delivery',
     created: 1604989757139
   },
   {
     name: 'Group-buying System',
-    personId: 2,
-    organization: 'Group Buying',
+    teamLeadId: 2,
+    team: 'Group Buying',
     created: 1604989757139,
     pin: true
   },
   {
     name: 'Equipment Management System',
-    personId: 2,
-    organization: 'Equipment',
+    teamLeadId: 2,
+    team: 'Equipment',
     created: 1546300800000
   },
   {
     name: 'Headquarters Management',
-    personId: 3,
-    organization: 'Headquarters',
+    teamLeadId: 3,
+    team: 'Headquarters',
     created: 1604980000011
   },
   {
     name: 'Route Planning System',
-    personId: 4,
-    organization: 'Delivery',
+    teamLeadId: 4,
+    team: 'Delivery',
     created: 1546900800000
   }
 ]
@@ -112,7 +112,7 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: 'Complete the task ASAP'
+    notes: 'Complete the task ASAP'
   },
   {
     name: 'Drivers Authentication Development',
@@ -123,7 +123,7 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: 'With JWT'
+    notes: 'With JWT'
   },
   {
     name: 'Unit Tests',
@@ -134,7 +134,7 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: ''
+    notes: ''
   },
   {
     name: 'Optimisation',
@@ -145,7 +145,7 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: ''
+    notes: ''
   },
   {
     name: 'Authorisation',
@@ -156,7 +156,7 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: ''
+    notes: ''
   },
   {
     name: 'UI Development',
@@ -167,7 +167,7 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: ''
+    notes: ''
   },
   {
     name: 'Self Testing',
@@ -178,6 +178,6 @@ export const tasks = [
     kanbanId: 1,
     favorite: true,
     typeId: 1,
-    note: ''
+    notes: ''
   }
 ]
