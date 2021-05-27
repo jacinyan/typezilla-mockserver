@@ -36,15 +36,6 @@ export function sanitizeUser(user) {
   return rest
 }
 
-export function validateUser(id) {
-  load()
-  if (!users[id]) {
-    const error = new ServerError(`No user with the id "${id}"`)
-    error.status = 404
-    throw error
-  }
-}
-
 //db
 export function required(key) {
   const error = new ServerError(`${key} is required`)

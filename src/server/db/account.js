@@ -1,10 +1,4 @@
-import {
-  sanitizeUser,
-  validateUser,
-  validateUserForm,
-  hash,
-  ServerError
-} from '../utils'
+import { sanitizeUser, validateUserForm, hash, ServerError } from '../utils'
 
 const usersKey = '__typezilla_users__'
 
@@ -19,6 +13,15 @@ try {
   load()
 } catch (error) {
   persist()
+}
+
+export function validateUser(id) {
+  load()
+  if (!users[id]) {
+    const error = new ServerError(`No user with the id "${id}"`)
+    error.status = 404
+    throw error
+  }
 }
 
 const authenticate = ({ name, password }) => {

@@ -4,7 +4,7 @@ import { bootstrap } from '../helpers/index'
 import { ServerError } from '../utils'
 
 const apiUrl = process.env.REACT_APP_API_URL
-
+console.log(process.env.REACT_APP_API_URL)
 const getToken = (req) =>
   req.headers.get('Authorization')?.replace('Bearer ', '')
 
