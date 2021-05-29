@@ -1,20 +1,11 @@
-import * as React from 'react'
-import styles from './styles.module.css'
-import { installDevTool } from './devtool'
 import { startServer } from './server'
+import { DevTool } from './devtool'
 
-interface Props {
-  text: string
-}
-
-export const loadDevTools = (callback: () => void) => {
+export const loadServer = (callback: () => void) => {
   startServer()
-  installDevTool()
   if (callback) {
     callback()
   }
 }
 
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export const DevTools = DevTool

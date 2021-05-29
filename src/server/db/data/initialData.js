@@ -73,32 +73,7 @@ export const projects = [
     name: 'Drivers Management System',
     teamLeadId: 1,
     team: 'Delivery',
-    created: 1604989757139
-  },
-  {
-    name: 'Group-buying System',
-    teamLeadId: 2,
-    team: 'Group Buying',
-    created: 1604989757139,
-    pin: true
-  },
-  {
-    name: 'Equipment Management System',
-    teamLeadId: 2,
-    team: 'Equipment',
-    created: 1546300800000
-  },
-  {
-    name: 'Headquarters Management',
-    teamLeadId: 3,
-    team: 'Headquarters',
-    created: 1604980000011
-  },
-  {
-    name: 'Route Planning System',
-    teamLeadId: 4,
-    team: 'Delivery',
-    created: 1546900800000
+    createdAt: 1609383542213
   }
 ]
 
