@@ -13,7 +13,7 @@ function ls(key, defaultVal) {
   return Number.isFinite(val) ? val : defaultVal
 }
 
-const sleep = (t = ls('__type zi l la_min_request_time__', 200)) =>
+const sleep = (t = ls('__typezilla_min_request_time__', 200)) =>
   new Promise((resolve) => setTimeout(resolve, t))
 
 export const handlers = [
