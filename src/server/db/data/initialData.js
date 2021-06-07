@@ -70,32 +70,10 @@ export const users = [
 
 export const projects = [
   {
-    name: 'Drivers Management System',
+    name: 'Delivery Management System',
     supervisorId: 1,
     team: 'Delivery',
-    createdAt: 1609253542213,
-    marked: false
-  },
-  {
-    name: 'Group Buying Application',
-    supervisorId: 2,
-    team: 'Group Buying',
-    createdAt: 1609386542213,
-    marked: true
-  },
-  {
-    name: 'Headquarters Management System',
-    supervisorId: 3,
-    team: 'Headquarters',
-    createdAt: 1609426542213,
-    marked: false
-  },
-  {
-    name: 'Route Planning System',
-    supervisorId: 4,
-    team: 'Service Gateway',
-    createdAt: 1609426542213,
-    marked: true
+    createdAt: 1609253542213
   }
 ]
 

@@ -4,12 +4,15 @@ import { getUser } from './accountHandlers'
 
 const apiUrl = process.env.REACT_APP_API_URL
 
+const tryToNumber = (value) =>
+  Array.isArray(value) ? value.map(Number) : Number(value)
+
 const convertIds = (object) => {
   const result = {}
   Object.keys(object).forEach((key) => {
-    // If 'id' is included, convert it to number
-    result[key] = key.includes('Id') ? Number(object[key]) : object[key]
+    result[key] = key.includes('Id') ? tryToNumber(object[key]) : object[key]
   })
+  result.id = tryToNumber(result.id)
   return result
 }
 
@@ -33,6 +36,8 @@ export const getRestHandlers = (endpoint, db) => {
       const { id } = convertIds(req.params)
       const updates = req.body
       const updatedItem = db.update(id, updates)
+
+      console.log(updatedItem)
       return res(ctx.json(updatedItem))
     }),
 
