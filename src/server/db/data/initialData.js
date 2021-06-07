@@ -59,7 +59,7 @@ export const users = [
     team: 'Group Buying'
   },
   {
-    name: 'Mandy Cheung',
+    name: 'Flora Cheng',
     team: 'Headquarters'
   },
   {
@@ -71,16 +71,30 @@ export const users = [
 export const projects = [
   {
     name: 'Drivers Management System',
-    teamLeadId: 1,
+    supervisorId: 1,
     team: 'Delivery',
-    createdAt: 1609383542213,
+    createdAt: 1609253542213,
     marked: false
   },
   {
     name: 'Group Buying Application',
-    teamLeadId: 2,
+    supervisorId: 2,
     team: 'Group Buying',
     createdAt: 1609386542213,
+    marked: true
+  },
+  {
+    name: 'Headquarters Management System',
+    supervisorId: 3,
+    team: 'Headquarters',
+    createdAt: 1609426542213,
+    marked: false
+  },
+  {
+    name: 'Route Planning System',
+    supervisorId: 4,
+    team: 'Service Gateway',
+    createdAt: 1609426542213,
     marked: true
   }
 ]
