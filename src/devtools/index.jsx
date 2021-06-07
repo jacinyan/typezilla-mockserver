@@ -46,7 +46,7 @@ export const DevTool = () => {
         key={'bottom'}
         height={'40%'}
       >
-        <Text type='secondary'>Devtool Console</Text>
+        <Text type='secondary'>Console</Text>
         <Tabs defaultActiveKey='1'>
           <TabPane
             tab={

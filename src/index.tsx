@@ -1,5 +1,5 @@
 import { startServer } from './server'
-import { DevTool } from './devtool'
+import { DevTool } from './devtools'
 
 export const loadServer = (callback: () => void) => {
   startServer()

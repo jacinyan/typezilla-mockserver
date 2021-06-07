@@ -56,7 +56,7 @@ export const users = [
   },
   {
     name: 'Ed Grylls ',
-    team: 'Delivery'
+    team: 'Group Buying'
   },
   {
     name: 'Mandy Cheung',
@@ -73,7 +73,15 @@ export const projects = [
     name: 'Drivers Management System',
     teamLeadId: 1,
     team: 'Delivery',
-    createdAt: 1609383542213
+    createdAt: 1609383542213,
+    marked: false
+  },
+  {
+    name: 'Group Buying Application',
+    teamLeadId: 2,
+    team: 'Group Buying',
+    createdAt: 1609386542213,
+    marked: true
   }
 ]
 
