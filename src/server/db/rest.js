@@ -65,7 +65,7 @@ class Rest {
 
   detail(id) {
     this.validateItem(id)
-    console.log(this.mapListArrToObj[id])
+    // console.log(this.mapListArrToObj[id])
     return this.mapListArrToObj[id]
   }
 

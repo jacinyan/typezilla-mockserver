@@ -30,7 +30,7 @@ export const DevTool = () => {
             zIndex: 9999
           }}
         >
-          <Tooltip title={'Use the devtool by click the button'}>
+          <Tooltip title={'Click this to open the devtools'}>
             <SettingTwoTone
               style={{ fontSize: '22px' }}
               onClick={() => setVisible(true)}

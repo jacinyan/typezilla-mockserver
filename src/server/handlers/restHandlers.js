@@ -27,7 +27,7 @@ export const getRestHandlers = (endpoint, db) => {
     }),
     // query detail
     rest.get(`${apiUrl}/${endpoint}/:id`, async (req, res, ctx) => {
-      const { id } = req.params
+      const { id } = convertIds(req.params)
       const item = db.detail(id)
       return res(ctx.json(item))
     }),
@@ -37,32 +37,45 @@ export const getRestHandlers = (endpoint, db) => {
       const updates = req.body
       const updatedItem = db.update(id, updates)
 
-      console.log(updatedItem)
+      // console.log(updatedItem)
       return res(ctx.json(updatedItem))
     }),
 
     // remove item
     rest.delete(`${apiUrl}/${endpoint}/:id`, async (req, res, ctx) => {
-      const { id } = req.params
+      const { id } = convertIds(req.params)
       db.remove(id)
+
       return res(ctx.json({ success: true }))
     }),
 
     // create item
     rest.post(`${apiUrl}/${endpoint}`, async (req, res, ctx) => {
       const user = await getUser(req)
-      const targetAddItem = Object.assign(req.body, { ownerId: user.id })
+      let cratedItem = Object.assign(req.body, {
+        ownerId: user.id,
+        createdAt: new Date().getTime()
+      })
 
-      const nameExist = !!db
-        .queryByOwnerId(user.id)
-        .find((item) => item.name === targetAddItem.name)
-      if (nameExist) {
-        const error = new ServerError('The name already exists')
-        error.status = 400
-        throw error
+      if (endpoint === 'tasks') {
+        cratedItem = {
+          ...cratedItem,
+          reporterId: user.id,
+          typeId: taskTypeDB.queryByOwnerId(user.id)[0].id,
+          createdAt: new Date().getTime()
+        }
       }
 
-      const detail = await db.create(convertIds(targetAddItem))
+      // const nameExist = !!db
+      //   .queryByOwnerId(user.id)
+      //   .find((item) => item.name === targetAddItem.name);
+      // if (nameExist) {
+      //   const error = new ServerError("Name already exists");
+      //   error.status = 400;
+      //   throw error;
+      // }
+
+      const detail = await db.create(convertIds(cratedItem))
       return res(ctx.json(detail))
     })
   ]
