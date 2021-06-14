@@ -40,7 +40,7 @@ export const bootstrap = (id) => {
 
   projectDB.queryByOwnerId(id).forEach((project) =>
     projectDB.update(project.id, {
-      supervisorId: userIds.random()
+      projectLeadId: userIds.random()
     })
   )
   kanbanDB.queryByOwnerId(id).forEach((kanban) => {
@@ -57,7 +57,7 @@ export const bootstrap = (id) => {
     taskDB.update(task.id, {
       tags: [tagIds.random()],
       reporterId: userIds.random(),
-      processorId: userIds.random(),
+      assigneeId: userIds.random(),
       epicId: epicIds.random(),
       kanbanId: kanbanIds.random(),
       typeId: typeIds.random()

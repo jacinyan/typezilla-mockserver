@@ -9,13 +9,13 @@ export const taskTypes = [
 
 export const tags = [
   {
-    name: 'preliminary'
+    name: 'Open'
   },
   {
-    name: 'mid-project'
+    name: 'In Progress'
   },
   {
-    name: 'final'
+    name: 'Closed'
   }
 ]
 
@@ -39,13 +39,13 @@ export const epics = [
 
 export const kanbans = [
   {
-    name: 'initiation'
+    name: 'To Do'
   },
   {
-    name: 'execution'
+    name: 'In Progress'
   },
   {
-    name: 'closure'
+    name: 'Done'
   }
 ]
 
@@ -71,7 +71,7 @@ export const users = [
 export const projects = [
   {
     name: 'Delivery Management System',
-    supervisorId: 1,
+    projectLeadId: 1,
     team: 'Delivery',
     createdAt: 1609253542213
   }
@@ -82,7 +82,7 @@ export const tasks = [
     name: 'Drivers Registration Development',
     tags: [1, 2],
     reporterId: 1,
-    processorId: 2,
+    assigneeId: 2,
     epicId: 1,
     kanbanId: 1,
     favorite: true,
@@ -93,7 +93,7 @@ export const tasks = [
     name: 'Drivers Authentication Development',
     tags: [2],
     reporterId: 1,
-    processorId: 2,
+    assigneeId: 2,
     epicId: 1,
     kanbanId: 1,
     favorite: true,
@@ -104,7 +104,7 @@ export const tasks = [
     name: 'Unit Tests',
     tags: [1],
     reporterId: 1,
-    processorId: 2,
+    assigneeId: 2,
     epicId: 1,
     kanbanId: 1,
     favorite: true,
@@ -115,7 +115,7 @@ export const tasks = [
     name: 'Optimisation',
     tags: [1],
     reporterId: 1,
-    processorId: 2,
+    assigneeId: 2,
     epicId: 1,
     kanbanId: 1,
     favorite: true,
@@ -126,7 +126,7 @@ export const tasks = [
     name: 'Authorisation',
     tags: [1],
     reporterId: 1,
-    processorId: 2,
+    assigneeId: 2,
     epicId: 1,
     kanbanId: 1,
     favorite: true,
@@ -137,7 +137,7 @@ export const tasks = [
     name: 'UI Development',
     tags: [1],
     reporterId: 1,
-    processorId: 2,
+    assigneeId: 2,
     epicId: 1,
     kanbanId: 1,
     favorite: true,
@@ -148,7 +148,7 @@ export const tasks = [
     name: 'Self Testing',
     tags: [1],
     reporterId: 1,
-    processorId: 2,
+    assigneeId: 2,
     epicId: 1,
     kanbanId: 1,
     favorite: true,
