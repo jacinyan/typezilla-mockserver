@@ -114,7 +114,7 @@ class Rest {
 export const projectDB = new Rest('__typezilla__project')
 export const epicDB = new Rest('__typezilla__epic')
 export const taskDB = new Rest('__typezilla__task')
-export const kanbanDB = new Rest('__typezilla__kanban')
+export const swimlaneDB = new Rest('__typezilla__swimlane')
 export const userDB = new Rest('__typezilla__user')
 export const taskTypeDB = new Rest('__typezilla__task__type')
 export const tagDB = new Rest('__typezilla__tag__')

@@ -1,7 +1,14 @@
 import { userHandlers } from './accountHandlers'
 import { getRestHandlers } from './restHandlers'
 import { match } from 'node-match-path'
-import { epicDB, kanbanDB, projectDB, tagDB, taskDB, userDB } from '../db/rest'
+import {
+  epicDB,
+  swimlaneDB,
+  projectDB,
+  tagDB,
+  taskDB,
+  userDB
+} from '../db/rest'
 import { reorderHandlers } from './reorderHandlers'
 
 function ls(key, defaultVal) {
@@ -21,7 +28,7 @@ export const handlers = [
   ...getRestHandlers('projects', projectDB),
   ...getRestHandlers('epics', epicDB),
   ...getRestHandlers('tasks', taskDB),
-  ...getRestHandlers('kanbans', kanbanDB),
+  ...getRestHandlers('swimlanes', swimlaneDB),
   ...getRestHandlers('persons', userDB),
   ...getRestHandlers('taskTypes', taskDB),
   ...getRestHandlers('tags', tagDB),

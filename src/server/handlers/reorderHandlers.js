@@ -1,11 +1,11 @@
 import { rest } from 'msw'
-import { kanbanDB, taskDB } from '../db/rest'
+import { swimlaneDB, taskDB } from '../db/rest'
 
 const apiUrl = process.env.REACT_APP_API_URL
 export const reorderHandlers = [
-  rest.post(`${apiUrl}/kanbans/reorder`, async (req, res, ctx) => {
+  rest.post(`${apiUrl}/swimlanes/reorder`, async (req, res, ctx) => {
     const { fromId, referenceId, type } = req.body
-    await kanbanDB.reorder({ fromId, referenceId, type })
+    await swimlaneDB.reorder({ fromId, referenceId, type })
     return res(ctx.json({}))
   }),
   rest.post(`${apiUrl}/tasks/reorder`, async (req, res, ctx) => {
@@ -13,11 +13,11 @@ export const reorderHandlers = [
       type,
       fromId: fromTaskId,
       referenceId,
-      fromKanbanId,
-      toKanbanId
+      fromSwimlaneId,
+      toSwimlaneId
     } = req.body
-    if (fromKanbanId !== toKanbanId) {
-      await taskDB.update(fromTaskId, { kanbanId: toKanbanId })
+    if (fromSwimlaneId !== toSwimlaneId) {
+      await taskDB.update(fromTaskId, { swimlaneId: toSwimlaneId })
     }
     taskDB.reorder({ type, fromId: fromTaskId, referenceId })
     return res(ctx.json({}))

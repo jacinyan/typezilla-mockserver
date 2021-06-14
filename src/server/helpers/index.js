@@ -1,7 +1,7 @@
 import * as initialData from '../db/data/initialData'
 import {
   epicDB,
-  kanbanDB,
+  swimlaneDB,
   projectDB,
   tagDB,
   taskDB,
@@ -19,20 +19,20 @@ export const bootstrap = (id) => {
   taskTypeDB.push(assignId(id, initialData.taskTypes))
   projectDB.push(assignId(id, initialData.projects))
   tagDB.push(assignId(id, initialData.tags))
-  kanbanDB.push(assignId(id, initialData.kanbans))
+  swimlaneDB.push(assignId(id, initialData.swimlanes))
   epicDB.push(assignId(id, initialData.epics))
   taskDB.push(assignId(id, initialData.tasks))
   userDB.push(assignId(id, initialData.users))
 
   const userIds = userDB.queryByOwnerId(id).map(pickId)
   const projectIds = projectDB.queryByOwnerId(id).map(pickId)
-  const kanbanIds = kanbanDB.queryByOwnerId(id).map(pickId)
+  const swimlaneIds = swimlaneDB.queryByOwnerId(id).map(pickId)
   const epicIds = epicDB.queryByOwnerId(id).map(pickId)
   const tagIds = tagDB.queryByOwnerId(id).map(pickId)
   const typeIds = taskTypeDB.queryByOwnerId(id).map(pickId)
 
   // projectIds.forEach(projectId => {
-  //   kanbanDB.push(assignId(id, initialData.kanbans, { projectId }));
+  //   swimlaneDB.push(assignId(id, initialData.swimlanes, { projectId }));
   // });
   // projectIds.forEach(projectId => {
   //   taskDB.push(assignId(id, initialData.tasks, { projectId }));
@@ -43,8 +43,8 @@ export const bootstrap = (id) => {
       projectLeadId: userIds.random()
     })
   )
-  kanbanDB.queryByOwnerId(id).forEach((kanban) => {
-    kanbanDB.update(kanban.id, {
+  swimlaneDB.queryByOwnerId(id).forEach((swimlane) => {
+    swimlaneDB.update(swimlane.id, {
       projectId: projectIds.random()
     })
   })
@@ -58,8 +58,9 @@ export const bootstrap = (id) => {
       tags: [tagIds.random()],
       reporterId: userIds.random(),
       assigneeId: userIds.random(),
+      projectId: projectIds.random(),
       epicId: epicIds.random(),
-      kanbanId: kanbanIds.random(),
+      swimlaneId: swimlaneIds.random(),
       typeId: typeIds.random()
     })
   )

@@ -37,7 +37,7 @@ export const epics = [
   }
 ]
 
-export const kanbans = [
+export const swimlanes = [
   {
     name: 'To Do'
   },
@@ -84,7 +84,7 @@ export const tasks = [
     reporterId: 1,
     assigneeId: 2,
     epicId: 1,
-    kanbanId: 1,
+    swimlaneId: 1,
     favorite: true,
     typeId: 1,
     notes: 'Complete the task ASAP'
@@ -95,7 +95,7 @@ export const tasks = [
     reporterId: 1,
     assigneeId: 2,
     epicId: 1,
-    kanbanId: 1,
+    swimlaneId: 1,
     favorite: true,
     typeId: 1,
     notes: 'With JWT'
@@ -106,7 +106,7 @@ export const tasks = [
     reporterId: 1,
     assigneeId: 2,
     epicId: 1,
-    kanbanId: 1,
+    swimlaneId: 1,
     favorite: true,
     typeId: 1,
     notes: ''
@@ -117,7 +117,7 @@ export const tasks = [
     reporterId: 1,
     assigneeId: 2,
     epicId: 1,
-    kanbanId: 1,
+    swimlaneId: 1,
     favorite: true,
     typeId: 1,
     notes: ''
@@ -128,7 +128,7 @@ export const tasks = [
     reporterId: 1,
     assigneeId: 2,
     epicId: 1,
-    kanbanId: 1,
+    swimlaneId: 1,
     favorite: true,
     typeId: 1,
     notes: ''
@@ -139,7 +139,7 @@ export const tasks = [
     reporterId: 1,
     assigneeId: 2,
     epicId: 1,
-    kanbanId: 1,
+    swimlaneId: 1,
     favorite: true,
     typeId: 1,
     notes: ''
@@ -150,7 +150,7 @@ export const tasks = [
     reporterId: 1,
     assigneeId: 2,
     epicId: 1,
-    kanbanId: 1,
+    swimlaneId: 1,
     favorite: true,
     typeId: 1,
     notes: ''
