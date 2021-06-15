@@ -52,14 +52,14 @@ export const getRestHandlers = (endpoint, db) => {
     // create item
     rest.post(`${apiUrl}/${endpoint}`, async (req, res, ctx) => {
       const user = await getUser(req)
-      let cratedItem = Object.assign(req.body, {
+      let createdItem = Object.assign(req.body, {
         ownerId: user.id,
         createdAt: new Date().getTime()
       })
 
       if (endpoint === 'tasks') {
-        cratedItem = {
-          ...cratedItem,
+        createdItem = {
+          ...createdItem,
           reporterId: user.id,
           typeId: taskTypeDB.queryByOwnerId(user.id)[0].id,
           createdAt: new Date().getTime()
@@ -75,7 +75,7 @@ export const getRestHandlers = (endpoint, db) => {
       //   throw error;
       // }
 
-      const detail = await db.create(convertIds(cratedItem))
+      const detail = await db.create(convertIds(createdItem))
       return res(ctx.json(detail))
     })
   ]

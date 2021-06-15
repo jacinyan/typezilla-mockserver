@@ -7,6 +7,7 @@ import {
   projectDB,
   tagDB,
   taskDB,
+  taskTypeDB,
   userDB
 } from '../db/rest'
 import { reorderHandlers } from './reorderHandlers'
@@ -30,7 +31,7 @@ export const handlers = [
   ...getRestHandlers('tasks', taskDB),
   ...getRestHandlers('swimlanes', swimlaneDB),
   ...getRestHandlers('persons', userDB),
-  ...getRestHandlers('taskTypes', taskDB),
+  ...getRestHandlers('taskTypes', taskTypeDB),
   ...getRestHandlers('tags', tagDB),
   ...getRestHandlers('users', userDB),
   ...reorderHandlers

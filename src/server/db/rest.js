@@ -79,15 +79,9 @@ class Rest {
     this.validateItem(id)
 
     const target = this.list.find((item) => item.id === id)
-    // console.log(target, updates)
-    // console.log({ ...target, ...updates })
-
-    // console.log(this.list.indexOf(target))
-    // console.log(this.list[this.list.indexOf(target)])
     this.list[this.list.indexOf(target)] = { ...target, ...updates }
 
     this.persist()
-    // console.log(this.detail(id))
     return this.detail(id)
   }
 
