@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import { ExampleComponent } from 'typezilla-mockserver'
-import 'typezilla-mockserver/dist/index.css'
+import { DevTools } from 'typezilla-mockserver'
 
 const apiUrl = process.env.REACT_APP_API_URL
 
@@ -8,7 +7,7 @@ const App = () => {
   useEffect(() => {
     window.fetch(`${apiUrl}/projects`)
   }, [])
-  return <ExampleComponent text='Create React Library Example 😄' />
+  return <DevTools />
 }
 //
 export default App

@@ -1,4 +1,4 @@
-import { ExampleComponent } from 'typezilla-mockserver'
+import ExampleComponent from '../example/src/App'
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
