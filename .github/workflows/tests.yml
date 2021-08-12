@@ -2,13 +2,12 @@ name: Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     strategy:
@@ -21,6 +20,4 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          cmd: install
-          cmd: build
-          cmd: test
+          cmd: [install, build, test]
