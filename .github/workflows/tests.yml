@@ -20,6 +20,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          timeout_seconds: 100000
+          max_attempts: 3
       - run: yarn install
       - run: yarn run build --if-present
       - run: yarn test
