@@ -23,6 +23,5 @@ jobs:
           timeout_seconds: 100000
           max_attempts: 3
       - run: yarn install
-      - run: yarn build
       - run: yarn predeploy
       - run: yarn test
