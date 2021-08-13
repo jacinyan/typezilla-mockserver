@@ -55,12 +55,12 @@ export const search = (list, query) => {
       }
 
       if (Array.isArray(queryValue)) {
-        return queryValue.find((value) => value == item[queryKey])
+        return queryValue.find((value) => value === item[queryKey])
       } else {
         if (queryValue === undefined || queryValue === '') {
           return true
         }
-        return item[queryKey] == queryValue
+        return item[queryKey] === queryValue
       }
     })
   })
