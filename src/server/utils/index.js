@@ -1,4 +1,4 @@
-//error handler
+// error handler
 export class ServerError extends Error {
   status = 200
 
@@ -7,7 +7,7 @@ export class ServerError extends Error {
   }
 }
 
-//auth
+// auth
 export const validateUserForm = ({ name, password }) => {
   if (!name) {
     const error = new ServerError('A name is required')
@@ -22,8 +22,8 @@ export const validateUserForm = ({ name, password }) => {
 }
 
 export function hash(str) {
-  let hash = 5381,
-    i = str.length
+  let hash = 5381
+  let i = str.length
 
   while (i) {
     hash = (hash * 33) ^ str.charCodeAt(--i)
@@ -36,7 +36,7 @@ export function sanitizeUser(user) {
   return rest
 }
 
-//db
+// db
 export function required(key) {
   const error = new ServerError(`${key} is required`)
   error.status = 400

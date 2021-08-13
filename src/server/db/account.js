@@ -29,7 +29,7 @@ const authenticate = ({ name, password }) => {
   const id = +hash(name)
   const user = users[id] || {}
   if (user.passwordHash === hash(password)) {
-    return { ...sanitizeUser(user), token: btoa(user.id + '') }
+    return { ...sanitizeUser(user), token: window.btoa(user.id + '') }
   }
   const error = new ServerError('Invalid name or password')
   error.status = 400

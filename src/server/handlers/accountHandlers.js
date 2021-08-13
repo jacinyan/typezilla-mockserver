@@ -17,7 +17,7 @@ export async function getUser(req) {
 
   let userId
   try {
-    userId = atob(token)
+    userId = window.atob(token)
   } catch (e) {
     const error = new ServerError('Invalid token. Please login again.')
     error.status = 401

@@ -5,9 +5,8 @@
   "extends": [
     "standard",
     "standard-react",
+    "prettier",
     "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react",
     "plugin:@typescript-eslint/eslint-recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -20,7 +19,7 @@
   },
   "settings": {
     "react": {
-      "version": "16"
+      "version": "17"
     }
   },
   "rules": {
@@ -29,6 +28,7 @@
     "react/jsx-handler-names": 0,
     "react/jsx-fragments": 0,
     "react/no-unused-prop-types": 0,
-    "import/export": 0
+    "import/export": 0,
+    "no-extend-native": 0
   }
 }

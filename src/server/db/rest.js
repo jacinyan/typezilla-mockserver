@@ -39,6 +39,7 @@ class Rest {
       throw error
     }
   }
+
   /**
    *
    * @param fromId
@@ -100,7 +101,7 @@ class Rest {
 
   queryByOwnerId(userId, param) {
     return this.query(param).filter((item) =>
-      'ownerId' in item ? item['ownerId'] === userId : true
+      'ownerId' in item ? item.ownerId === userId : true
     )
   }
 }
