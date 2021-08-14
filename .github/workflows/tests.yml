@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install & Predeploy & Test
-        timeout-minutes: 10
+        timeout-minutes: 12
         run: |
           yarn install
           yarn predeploy
