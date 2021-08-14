@@ -28,7 +28,7 @@
     "antd": "4.10.2",
     "msw": "0.24.1",
     "react-query": "3.5.10",
-    "typezilla-mockserver": "^0.8.1"
+    "typezilla-mockserver": "^0.9.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

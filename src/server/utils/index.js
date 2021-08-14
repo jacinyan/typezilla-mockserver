@@ -1,10 +1,6 @@
 // error handler
 export class ServerError extends Error {
   status = 200
-
-  constructor(message) {
-    super(message)
-  }
 }
 
 // auth

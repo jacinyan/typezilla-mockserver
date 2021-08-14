@@ -12376,6 +12376,16 @@ typezilla-mockserver@^0.8.1:
     react-query "3.5.10"
     typezilla-mockserver "^0.8.1"
 
+typezilla-mockserver@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/typezilla-mockserver/-/typezilla-mockserver-0.9.0.tgz#14e366d6a499ca7dfa328346ca2ba75f947107ad"
+  integrity sha512-2ay0+59BMe66aqpf8XWpSxA38h9k9o8S7TuZrbeObujAZIFVK9Eyie67ys1c7pzW2KmBBvks2dTc1MZVGezgjA==
+  dependencies:
+    antd "4.10.2"
+    msw "0.24.1"
+    react-query "3.5.10"
+    typezilla-mockserver "^0.8.1"
+
 unbox-primitive@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.1.tgz#085e215625ec3162574dc8859abee78a59b14471"
