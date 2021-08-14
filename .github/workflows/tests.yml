@@ -8,7 +8,9 @@ on:
 
 jobs:
   build:
+    name: Tests
     runs-on: macos-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
@@ -22,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install & Predeploy & Test
-        timeout-minutes: 1
+        timeout-minutes: 10
         run: |
           yarn install
           yarn predeploy
